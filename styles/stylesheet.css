@@ -8,12 +8,12 @@
     font-family: Arial, sans-serif;
     font-size: 17px;
     color: #F5F5F5;
-    /* background-color: #f4f4f4; */
   }
 
   a {
     color: #f4f4f4;
   }
+
   /* MAIN GRID */
 
   main {
@@ -23,7 +23,6 @@
     background-image: url("../images/footer-image.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgb(236, 183, 34);
   }
 
   /* header */
@@ -32,11 +31,7 @@
     display: block;
     grid-column: 1 / 5;
     grid-row: 1;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
     background-color: rgba(3, 163, 223, 0.2);
-    /* box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1); */
-    /* position: fixed; */
     width: 100%;
     z-index: 3;
   }
@@ -44,7 +39,6 @@
   img {
     width: 250px;
     padding: 10px 20px;
-    /* float: left; */
     margin-left: 0;
   }
 
@@ -54,8 +48,6 @@
     padding: 0;
     list-style: none;
     overflow: hidden;
-    /* background-color: rgb(3, 163, 223); */
-    /* change the background color */
   }
 
   .header li a {
@@ -94,7 +86,6 @@
 
   .header .menu-icon .navicon {
     background: #fff;
-    /* color adjustment, check the background color */
     display: block;
     height: 4px;
     position: relative;
@@ -131,7 +122,9 @@
   }
 
   .header .menu-btn:checked~.menu {
-    max-height: 240px;
+    max-height: 338px;
+    font-size: 2em;
+    font-weight: bold;
   }
 
   .header .menu-btn:checked~.menu-icon .navicon {
@@ -151,10 +144,10 @@
     top: 0;
   }
 
+  /* Media query */
 
-  /* 67em = 1072px */
+  @media only screen and (min-width: 1200px) {
 
-  @media (min-width: 67em) {
     img {
       width: 250px;
       padding: 10px 20px;
@@ -164,7 +157,7 @@
       margin: 0;
       padding: 0;
     }
-    /* .header {flex-direction: column;} */
+
     .header li {
       float: left;
     }
@@ -193,7 +186,6 @@
     margin: 1em 0;
     color: #ecb722;
     font-weight: bold;
-    /*  */
   }
 
   .sign-up label {
@@ -239,10 +231,8 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: rgb(27,68,127); */
     background-color: rgba(68, 68, 68, 0.8);
     width: 100%;
-    /* padding: 40px; */
     border-radius: 8px;
     padding: 1em;
   }
@@ -252,9 +242,7 @@
   }
 
   p {
-    /* line-height: .4em; */
     color: rgb(245, 245, 245);
-    /* font-weight: bold; */
     letter-spacing: 1px;
   }
 
@@ -276,23 +264,20 @@
   footer {
     grid-column: 1 / span 4;
     grid-row: 5;
-    /* display: flex; */
     display: grid;
-    grid-template-columns: .5fr 1fr 1fr 1fr 1fr .5fr;
+    grid-template-columns: .25fr 1fr 1fr 1fr 1fr .5fr;
     grid-template-rows: .50fr 1fr .50fr;
     align-items: center;
     background-image: url("../images/footer-image.png");
-    /* flex-direction: column; */
-    /* padding: 40px; */
     height: 100%;
     background-size: cover;
-    /* grid-column: 1 / 3; */
   }
 
   footer img[src="./images/logo.png"] {
-    width: 100%;
-    grid-column-start: 2;
+    width: 50%;
     margin: 0;
+    grid-column: 2 / span 2;
+    justify-self: center;
   }
 
   footer p {
@@ -308,8 +293,6 @@
     grid-column: 5;
     grid-row: 2;
     margin-top: 37px;
-    /* margin-left: 8px; */
-    /* width: max-content; */
   }
 
   footer ul {
@@ -319,7 +302,7 @@
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    line-height: 2em;
   }
 
   li {
@@ -344,7 +327,19 @@
     grid-row: 2;
     display: flex;
     flex-direction: column;
-    width: 84%;
+    width: 100%;
+  }
+
+  h5 {
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em 0;
+  }
+
+  #contact label {
+    text-align: center;
+    line-height: 2em;
+    font-weight: bold;
   }
 
   small {
@@ -370,29 +365,283 @@
     margin-right: 0;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1118px) {
     main {
-      display: block;
+      display: grid;
+      grid-template-columns: 25px repeat(3, 1fr) 25px;
+      justify-items: center;
       align-items: center;
+    }
+
+    .header {
+      display: grid;
+      justify-items: center;
+      grid-column: 1 / -1;
+      grid-row: 1;
+      background-color: rgba(3, 163, 223, 0.2);
+    }
+
+    img {
+      width: auto;
+    }
+
+    .menu-icon .navicon {
+      background: #fff;
+      height: 4px;
+      position: relative;
+      transition: background .2s ease-out;
+      width: 25px;
+    }
+
+    .header .menu-icon .navicon {
+      top: 0;
+      width: 3em;
+      height: 8px;
+    }
+
+    .header .menu-icon .navicon:before {
+      top: 18px;
+      width: 3em;
+      height: 8px;
+    }
+
+    .header .menu-icon .navicon:after {
+      top: 36px;
+      width: 3em;
+      height: 8px;
     }
 
     form.sign-up {
+      grid-column: 3;
       display: flex;
       flex-direction: column;
-      width: 50%;
       align-items: center;
-      margin: 0 0 0 93px;
-    }
-    /*
-    .section {
-      display: block;
-      justify-content: center;
-      align-items: center;
-    }
-*/
-    video {
-      width: 320px;
-      height: 180px;
     }
 
+    .sign-up label:nth-last-child(odd) {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .sign-up input {
+      width: 24em;
+      height: 3em;
+      border: none;
+      margin: 2em 0;
+    }
+
+    .sign-up input:last-child {
+      font-size: 1em;
+      font-weight: bold;
+    }
+
+    video {
+      grid-column: 3;
+      grid-row: 3;
+      width: 854px;
+      height: 480px;
+    }
+
+    aside#address {
+      grid-row: 4;
+      display: grid;
+      justify-items: center;
+      grid-column: 1 / -1;
+      align-items: center;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    aside#address > p {
+      font-size: 2em;
+    }
+
+    .tacoma {
+      width: 60%;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer img[src="./images/logo.png"] {
+      width: 60%;
+      margin: 0;
+    }
+
+    footer p {
+      font-size: 2em;
+      text-align: justify;
+      width: 51%;
+      margin: 37px 0;
+    }
+
+    footer nav {
+      margin-top: 100px;
+    }
+
+    footer ul {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 0px;
+      margin-bottom: 0;
+      padding: 0;
+      font-size: 2em;
+      line-height: 75px;
+    }
+
+    h5 {
+      font-size: 2em;
+      margin: 3em 0 1em 0;
+    }
+
+    form#contact {
+      font-size: 2em;
+      align-items: center;
+      line-height: 2em;
+    }
+
+    form#contact input {
+      width: 24em;
+      height: 3em;
+      border: none;
+    }
+
+    form#contact textarea {
+      width: 80%;
+      height: 75%;
+      font-size: 1em;
+    }
+
+    form#contact button {
+      margin-top: 2em;
+      font-size: 1em;
+      font-weight: bold;
+      width: 80%;
+      height: 2em;
+    }
+
+    .social {
+      display: block;
+      margin-top: 5em;
+    }
+
+    .social a>i {
+        font-size: 4em;
+        color: #F5F5F5;
+    }
+
+    .social a > .fa-twitter-square {
+        margin-right: 0;
+    }
+
+    small {
+      font-size: 2em;
+      margin: 3em 0;
+    }
   }
+
+
+  @media (max-width: 907px) {
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      display: grid;
+      justify-content: center;
+      grid-column: 1 / -1;
+      grid-row: 1;
+      background-color: rgba(3, 163, 223, 0.2);
+    }
+
+    img {
+      width: auto;
+      padding: 0;
+    }
+
+    video {
+      width: 640px;
+      height: 360px;
+    }
+  }
+
+    @media (max-width: 650px) {
+
+      main {
+        display: flex;
+        flex-direction: column;
+      }
+
+      img {
+        width: 50%;
+      }
+
+      .sign-up input:last-child {
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+
+      video {
+        width: 426px;
+        height: 240px;
+      }
+
+      aside#address {
+        display: flex;
+      }
+
+      aside#address > p {
+        font-size: 1em;
+      }
+
+      footer p {
+        font-size: 2em;
+        text-align: left;
+        width: 75%;
+        margin: 37px 0;
+      }
+
+      .social {
+        display: block;
+        margin-top: 5em;
+      }
+
+      .social a>i {
+          font-size: 4em;
+          margin-right: 0;
+          color: #F5F5F5;
+      }
+
+      .social a > .fa-twitter-square {
+          margin-right: 0;
+      }
+
+      small {
+        font-size: 1.4em;
+      }
+    }
+
+    @media (max-width: 450px) {
+
+      main {
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+            justify-items: center;
+      }
+
+      video {
+        width: 386px;
+        height: 240px;
+      }
+
+      small {
+        font-size: 1em;
+      }
+    }
