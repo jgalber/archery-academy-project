@@ -30,7 +30,7 @@
   }
 
   #home {
-    color: #03a3df;
+    color: transparent;
     text-transform: uppercase;
     text-decoration: none;
     transition-property: all;
@@ -53,8 +53,7 @@
 
   main {
     display: grid;
-    /* background-color: rgb(27,68,127); */
-  }
+    }
 
   section {
     display: grid;
@@ -129,10 +128,7 @@
   .logos {
     display: grid;
     align-items: center;
-    /* align-content: space-around; */
-    /* grid-template-columns: 1fr; */
     grid-template-columns: repeat(5, .5fr);
-    /* grid-template-rows: .25fr .5fr; */
   }
 
   h2 {
@@ -142,7 +138,6 @@
     font-family: Arial;
     font-size: 24px;
     color: #ecb722;
-    /* text-shadow: 1px 1px 4px #03a3df; */
     text-align: center;
     grid-column: 1 / 6;
     grid-row: 1;
@@ -174,9 +169,6 @@
     flex-direction: column;
     padding: 40px;
     background-color: rgba(3, 163, 223, 0.2);
-    /* background-image: url("../images/footer-image.png"); */
-    /* height: 100%; */
-    /* background-size: cover; */
     grid-column: 1 / 3;
   }
 
