@@ -35,7 +35,7 @@
   }
 
   #home {
-    color: #03a3df;
+    color: transparent;
     text-transform: uppercase;
     text-decoration: none;
     transition-property: all;
