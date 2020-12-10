@@ -244,16 +244,13 @@
 
   .social > a {
     margin-right: 25px;
+    font-size: 35px;
+    color: #F5F5F5;
   }
 
   .social a:last-child {
       margin-right: 0;
     }
-
-  .social a>i  {
-    font-size: 35px;
-    color: #F5F5F5;
-  }
 
   @media (max-width: 1100px) {
     header {
